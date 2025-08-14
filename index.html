@@ -1,185 +1,650 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nama Anda — Curriculum Vitae</title>
-  <meta name="description" content="Curriculum Vitae" />
-  <style>
-    :root{
-      --bg:#ffffff; --fg:#0f172a; --muted:#475569; --line:#e2e8f0; --chip:#f1f5f9; --accent:#0ea5e9;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .page{max-width:900px;margin:40px auto;padding:0 24px}
-    header{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px}
-    .avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
-    h1{font-size:28px;margin:0}
-    .subtitle{color:var(--muted);margin-top:4px}
-    .contact{margin-left:auto;min-width:260px}
-    .contact a{display:block;color:var(--fg)}
-    section{margin:28px 0}
-    h2{font-size:18px;margin:0 0 12px 0;text-transform:uppercase;letter-spacing:.06em}
-    .summary{color:var(--muted)}
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:14px}
-    .item{display:grid;grid-template-columns:160px 1fr;gap:16px;padding:12px 0;border-top:1px dashed var(--line)}
-    .item:first-child{border-top:none}
-    .when{color:var(--muted);font-size:14px}
-    .role{font-weight:600}
-    .org{color:var(--muted)}
-    ul{margin:6px 0 0 18px}
-    li{margin:4px 0}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    footer{margin:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:12px}
-    @media print{
-      .page{margin:0;padding:0}
-      a{text-decoration:none;color:inherit}
-      header{border:none;padding-bottom:0;margin-bottom:8px}
-      .chip{border:1px solid #bbb}
-      footer{display:none}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - CV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="white" opacity="0.1"/><circle cx="75" cy="35" r="1.5" fill="white" opacity="0.15"/><circle cx="50" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="15" cy="65" r="1" fill="white" opacity="0.1"/><circle cx="85" cy="75" r="2" fill="white" opacity="0.1"/></svg>');
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 2.2em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 1.1em;
+            opacity: 0.9;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 0;
+        }
+
+        .sidebar {
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px 25px;
+            position: relative;
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, #dee2e6, transparent);
+        }
+
+        .main {
+            padding: 30px;
+            background: white;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .section-title i {
+            color: #667eea;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 10px 12px;
+            background: white;
+            border-radius: 8px;
+            color: #555;
+            border-left: 3px solid #667eea;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item i {
+            width: 18px;
+            color: #667eea;
+            font-size: 14px;
+        }
+
+        .contact-item span {
+            font-size: 14px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .equipment-item {
+            background: white;
+            color: #555;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            border-left: 3px solid #f093fb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .equipment-item:hover {
+            transform: translateX(3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover, .education-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+
+        .item-company {
+            color: #6c757d;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+        }
+
+        .item-date {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .item-description {
+            color: #495057;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #f093fb;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(240, 147, 251, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 0 0 0 60px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border-left-color: #764ba2;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .project-description {
+            color: #495057;
+            line-height: 1.6;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, #f093fb, #764ba2);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(240, 147, 251, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .name {
+                font-size: 1.8em;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .sidebar, .main {
+                padding: 25px 20px;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .about-text {
+            line-height: 1.7;
+            color: #495057;
+            font-size: 0.95em;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        /* Subtle animations */
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <!-- Opsional: ganti src dengan foto profil Anda (rasio 1:1) -->
-      <img class="avatar" src="https://avatars.githubusercontent.com/u/9919?s=200" alt="Foto Profil" />
-      <div>
-        <h1>Nama Anda</h1>
-        <div class="subtitle">Network & Server Infrastructure • Fokus: Jaringan, SD‑WAN, NAC</div>
-      </div>
-      <div class="contact">
-        <a href="mailto:email@contoh.com">email@contoh.com</a>
-        <a href="tel:+6281234567890">+62 812-3456-7890</a>
-        <a href="https://github.com/username">github.com/username</a>
-        <a href="https://www.linkedin.com/in/username">linkedin.com/in/username</a>
-        <a href="https://username.github.io">username.github.io</a>
-      </div>
-    </header>
+    <div class="container">
+        <div class="header">
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1 class="name">Your Full Name</h1>
+            <p class="title">Network Engineer | IT Professional</p>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/yourusername" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:your.email@example.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://instagram.com/yourusername" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
 
-    <section>
-      <h2>Ringkasan</h2>
-      <p class="summary">Engineer jaringan dengan pengalaman di OSPF/BGP, SD‑WAN, dan NAC (Aruba ClearPass). Terbiasa mengotomasi backup & audit konfigurasi perangkat (Cisco, Aruba) menggunakan Python dan Oxidized, serta membangun visibilitas konfigurasi berbasis Git.</p>
-    </section>
+        <div class="content">
+            <div class="sidebar">
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-address-card"></i>
+                        Contact
+                    </h2>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+62 812-3456-7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>your.email@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jakarta, Indonesia</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>yourwebsite.com</span>
+                    </div>
+                </div>
 
-    <section>
-      <h2>Keahlian Utama</h2>
-      <div class="chips">
-        <span class="chip">Routing: OSPF, BGP</span>
-        <span class="chip">SD‑WAN (Fortinet, Sophos)</span>
-        <span class="chip">NAC (Aruba ClearPass)</span>
-        <span class="chip">Automation: Python</span>
-        <span class="chip">Config Backup (Oxidized)</span>
-        <span class="chip">Linux (Ubuntu)</span>
-        <span class="chip">Monitoring/Observability</span>
-        <span class="chip">Git & GitHub Actions</span>
-      </div>
-    </section>
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-code"></i>
+                        Technical Skills
+                    </h2>
+                    <div class="skills-grid">
+                        <div class="skill-tag">Network Administration</div>
+                        <div class="skill-tag">Python Scripting</div>
+                        <div class="skill-tag">Linux Administration</div>
+                        <div class="skill-tag">Network Security</div>
+                        <div class="skill-tag">Automation</div>
+                        <div class="skill-tag">Troubleshooting</div>
+                        <div class="skill-tag">VLAN Configuration</div>
+                        <div class="skill-tag">Routing Protocols</div>
+                    </div>
+                </div>
 
-    <section>
-      <h2>Pengalaman</h2>
-      <div class="item">
-        <div>
-          <div class="when">2023 — Sekarang</div>
-        </div>
-        <div>
-          <div class="role">Network & Server Infrastructure</div>
-          <div class="org">Perusahaan ABC — Jakarta</div>
-          <ul>
-            <li>Mendesain dan mengimplementasikan SD‑WAN antar 14+ cabang dengan IPsec + BGP via HO; meningkatkan ketersediaan konektivitas lintas-cabang.</li>
-            <li>Membangun server Oxidized di Ubuntu 22.04 untuk backup konfigurasi perangkat setiap 5 menit, termasuk deteksi perubahan & notifikasi email HTML.</li>
-            <li>Integrasi Aruba ClearPass dengan Active Directory untuk otentikasi Wi‑Fi tersegmentasi (manajerial/non‑manajerial).</li>
-          </ul>
-        </div>
-      </div>
-      <div class="item">
-        <div>
-          <div class="when">2021 — 2023</div>
-        </div>
-        <div>
-          <div class="role">Network Engineer</div>
-          <div class="org">Perusahaan XYZ — Jakarta</div>
-          <ul>
-            <li>Operasional & optimasi OSPF area 0 pada DC dan cabang; perbaikan mekanisme failover MPLS.</li>
-            <li>Otomasi backup konfigurasi Cisco/Aruba via Telnet/SSH dengan Python, grouping kredensial perangkat.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-server"></i>
+                        Equipment Mastery
+                    </h2>
+                    <div class="equipment-grid">
+                        <div class="equipment-item">Cisco Switches & Routers</div>
+                        <div class="equipment-item">Aruba Switches</div>
+                        <div class="equipment-item">HP ProCurve Series</div>
+                        <div class="equipment-item">Mikrotik RouterOS</div>
+                        <div class="equipment-item">Ubiquiti UniFi</div>
+                        <div class="equipment-item">Fortinet FortiGate</div>
+                        <div class="equipment-item">VMware vSphere</div>
+                        <div class="equipment-item">Linux Servers</div>
+                    </div>
+                </div>
+            </div>
 
-    <section class="two-col">
-      <div>
-        <h2>Proyek Terpilih</h2>
-        <div class="item">
-          <div>
-            <div class="when">2025</div>
-          </div>
-          <div>
-            <div class="role">Git‑Driven Config Change Monitor</div>
-            <div class="org">Python • Oxidized • Email HTML</div>
-            <ul>
-              <li>Memonitor perubahan konfigurasi perangkat dan mengirim ringkasan per‑device via email.</li>
-              <li>Repo Git otomatis menyimpan diff untuk audit.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="item">
-          <div>
-            <div class="when">2024</div>
-          </div>
-          <div>
-            <div class="role">NAC Wi‑Fi dengan ClearPass</div>
-            <div class="org">Aruba VC‑315 • AD • Role Mapping</div>
-            <ul>
-              <li>Segmentasi 192.168.60.0/24 & 192.168.62.0/24 untuk kebijakan akses berbasis peran.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h2>Pendidikan & Sertifikasi</h2>
-        <div class="item">
-          <div>
-            <div class="when">2016 — 2020</div>
-          </div>
-          <div>
-            <div class="role">S1 Teknik Informatika</div>
-            <div class="org">Universitas Contoh</div>
-          </div>
-        </div>
-        <div class="item">
-          <div>
-            <div class="when">2023</div>
-          </div>
-          <div>
-            <div class="role">Sertifikasi (contoh)</div>
-            <div class="org">CCNA / NSE • (Opsional)</div>
-          </div>
-        </div>
-        <h2>Bahasa</h2>
-        <div class="chips">
-          <span class="chip">Indonesia (Native)</span>
-          <span class="chip">English (Professional)</span>
-        </div>
-      </div>
-    </section>
+            <div class="main">
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-user-tie"></i>
+                        About Me
+                    </h2>
+                    <p class="about-text">
+                        Passionate Network Engineer with 3+ years of experience in designing, implementing, and maintaining enterprise network infrastructure. Skilled in automation, troubleshooting, and optimizing network performance. Always eager to learn new technologies and contribute to team success.
+                    </p>
+                </div>
 
-    <section>
-      <h2>Kontak & Tautan</h2>
-      <ul>
-        <li>Portofolio/Blog: <a href="https://username.github.io">https://username.github.io</a></li>
-        <li>GitHub: <a href="https://github.com/username">https://github.com/username</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/username">https://www.linkedin.com/in/username</a></li>
-      </ul>
-    </section>
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-briefcase"></i>
+                        Work Experience
+                    </h2>
+                    
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Senior Network Engineer</div>
+                                <div class="item-company">PT. Tech Solutions Indonesia</div>
+                            </div>
+                            <div class="item-date">2022 - Present</div>
+                        </div>
+                        <div class="item-description">
+                            • Managed enterprise network infrastructure serving 500+ users<br>
+                            • Implemented automated network monitoring using Python scripts<br>
+                            • Reduced network downtime by 40% through proactive monitoring<br>
+                            • Led migration to SD-WAN architecture across 10 branch offices
+                        </div>
+                    </div>
 
-    <footer>
-      <span>Terakhir diperbarui: Agustus 2025 • Cetak langsung dari browser (CTRL/CMD+P)</span>
-    </footer>
-  </div>
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Network Administrator</div>
+                                <div class="item-company">CV. Digital Nusantara</div>
+                            </div>
+                            <div class="item-date">2020 - 2022</div>
+                        </div>
+                        <div class="item-description">
+                            • Maintained Cisco and Aruba network equipment<br>
+                            • Implemented network security policies and VPN solutions<br>
+                            • Provided technical support and troubleshooting<br>
+                            • Documented network configurations and procedures
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        Education
+                    </h2>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Bachelor of Information Technology</div>
+                                <div class="item-company">Universitas Indonesia</div>
+                            </div>
+                            <div class="item-date">2016 - 2020</div>
+                        </div>
+                        <div class="item-description">
+                            Graduated with honors (GPA: 3.7/4.0)<br>
+                            Relevant coursework: Network Design, Computer Security, Database Systems
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-certificate"></i>
+                        Certifications
+                    </h2>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">CCNA (Cisco Certified Network Associate)</div>
+                                <div class="item-company">Cisco Systems</div>
+                            </div>
+                            <div class="item-date">2021</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-project-diagram"></i>
+                        Projects
+                    </h2>
+                    
+                    <div class="projects">
+                        <div class="project-card">
+                            <div class="project-title">Network Automation Suite</div>
+                            <div class="project-description">
+                                Developed Python scripts for automated network device configuration backup and monitoring. Integrated with email notifications and database logging for change tracking.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Netmiko</span>
+                                <span class="tech-tag">SQLite</span>
+                                <span class="tech-tag">Email API</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-title">Enterprise Network Redesign</div>
+                            <div class="project-description">
+                                Led the complete network infrastructure overhaul for a 200-employee company. Implemented redundant core switches, VLAN segmentation, and improved security policies.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Cisco</span>
+                                <span class="tech-tag">VLAN</span>
+                                <span class="tech-tag">OSPF</span>
+                                <span class="tech-tag">Network Design</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-title">Network Monitoring Dashboard</div>
+                            <div class="project-description">
+                                Built a real-time network monitoring dashboard using open-source tools. Provides visibility into bandwidth usage, device status, and network performance metrics.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Grafana</span>
+                                <span class="tech-tag">InfluxDB</span>
+                                <span class="tech-tag">SNMP</span>
+                                <span class="tech-tag">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
