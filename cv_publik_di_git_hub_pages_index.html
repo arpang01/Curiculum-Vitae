@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nama Anda — Curriculum Vitae</title>
+  <meta name="description" content="Curriculum Vitae" />
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#0f172a; --muted:#475569; --line:#e2e8f0; --chip:#f1f5f9; --accent:#0ea5e9;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .page{max-width:900px;margin:40px auto;padding:0 24px}
+    header{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px}
+    .avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
+    h1{font-size:28px;margin:0}
+    .subtitle{color:var(--muted);margin-top:4px}
+    .contact{margin-left:auto;min-width:260px}
+    .contact a{display:block;color:var(--fg)}
+    section{margin:28px 0}
+    h2{font-size:18px;margin:0 0 12px 0;text-transform:uppercase;letter-spacing:.06em}
+    .summary{color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:14px}
+    .item{display:grid;grid-template-columns:160px 1fr;gap:16px;padding:12px 0;border-top:1px dashed var(--line)}
+    .item:first-child{border-top:none}
+    .when{color:var(--muted);font-size:14px}
+    .role{font-weight:600}
+    .org{color:var(--muted)}
+    ul{margin:6px 0 0 18px}
+    li{margin:4px 0}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    footer{margin:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:12px}
+    @media print{
+      .page{margin:0;padding:0}
+      a{text-decoration:none;color:inherit}
+      header{border:none;padding-bottom:0;margin-bottom:8px}
+      .chip{border:1px solid #bbb}
+      footer{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <!-- Opsional: ganti src dengan foto profil Anda (rasio 1:1) -->
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/9919?s=200" alt="Foto Profil" />
+      <div>
+        <h1>Nama Anda</h1>
+        <div class="subtitle">Network & Server Infrastructure • Fokus: Jaringan, SD‑WAN, NAC</div>
+      </div>
+      <div class="contact">
+        <a href="mailto:email@contoh.com">email@contoh.com</a>
+        <a href="tel:+6281234567890">+62 812-3456-7890</a>
+        <a href="https://github.com/username">github.com/username</a>
+        <a href="https://www.linkedin.com/in/username">linkedin.com/in/username</a>
+        <a href="https://username.github.io">username.github.io</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Ringkasan</h2>
+      <p class="summary">Engineer jaringan dengan pengalaman di OSPF/BGP, SD‑WAN, dan NAC (Aruba ClearPass). Terbiasa mengotomasi backup & audit konfigurasi perangkat (Cisco, Aruba) menggunakan Python dan Oxidized, serta membangun visibilitas konfigurasi berbasis Git.</p>
+    </section>
+
+    <section>
+      <h2>Keahlian Utama</h2>
+      <div class="chips">
+        <span class="chip">Routing: OSPF, BGP</span>
+        <span class="chip">SD‑WAN (Fortinet, Sophos)</span>
+        <span class="chip">NAC (Aruba ClearPass)</span>
+        <span class="chip">Automation: Python</span>
+        <span class="chip">Config Backup (Oxidized)</span>
+        <span class="chip">Linux (Ubuntu)</span>
+        <span class="chip">Monitoring/Observability</span>
+        <span class="chip">Git & GitHub Actions</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pengalaman</h2>
+      <div class="item">
+        <div>
+          <div class="when">2023 — Sekarang</div>
+        </div>
+        <div>
+          <div class="role">Network & Server Infrastructure</div>
+          <div class="org">Perusahaan ABC — Jakarta</div>
+          <ul>
+            <li>Mendesain dan mengimplementasikan SD‑WAN antar 14+ cabang dengan IPsec + BGP via HO; meningkatkan ketersediaan konektivitas lintas-cabang.</li>
+            <li>Membangun server Oxidized di Ubuntu 22.04 untuk backup konfigurasi perangkat setiap 5 menit, termasuk deteksi perubahan & notifikasi email HTML.</li>
+            <li>Integrasi Aruba ClearPass dengan Active Directory untuk otentikasi Wi‑Fi tersegmentasi (manajerial/non‑manajerial).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="when">2021 — 2023</div>
+        </div>
+        <div>
+          <div class="role">Network Engineer</div>
+          <div class="org">Perusahaan XYZ — Jakarta</div>
+          <ul>
+            <li>Operasional & optimasi OSPF area 0 pada DC dan cabang; perbaikan mekanisme failover MPLS.</li>
+            <li>Otomasi backup konfigurasi Cisco/Aruba via Telnet/SSH dengan Python, grouping kredensial perangkat.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h2>Proyek Terpilih</h2>
+        <div class="item">
+          <div>
+            <div class="when">2025</div>
+          </div>
+          <div>
+            <div class="role">Git‑Driven Config Change Monitor</div>
+            <div class="org">Python • Oxidized • Email HTML</div>
+            <ul>
+              <li>Memonitor perubahan konfigurasi perangkat dan mengirim ringkasan per‑device via email.</li>
+              <li>Repo Git otomatis menyimpan diff untuk audit.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="when">2024</div>
+          </div>
+          <div>
+            <div class="role">NAC Wi‑Fi dengan ClearPass</div>
+            <div class="org">Aruba VC‑315 • AD • Role Mapping</div>
+            <ul>
+              <li>Segmentasi 192.168.60.0/24 & 192.168.62.0/24 untuk kebijakan akses berbasis peran.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>Pendidikan & Sertifikasi</h2>
+        <div class="item">
+          <div>
+            <div class="when">2016 — 2020</div>
+          </div>
+          <div>
+            <div class="role">S1 Teknik Informatika</div>
+            <div class="org">Universitas Contoh</div>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="when">2023</div>
+          </div>
+          <div>
+            <div class="role">Sertifikasi (contoh)</div>
+            <div class="org">CCNA / NSE • (Opsional)</div>
+          </div>
+        </div>
+        <h2>Bahasa</h2>
+        <div class="chips">
+          <span class="chip">Indonesia (Native)</span>
+          <span class="chip">English (Professional)</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Kontak & Tautan</h2>
+      <ul>
+        <li>Portofolio/Blog: <a href="https://username.github.io">https://username.github.io</a></li>
+        <li>GitHub: <a href="https://github.com/username">https://github.com/username</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/username">https://www.linkedin.com/in/username</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <span>Terakhir diperbarui: Agustus 2025 • Cetak langsung dari browser (CTRL/CMD+P)</span>
+    </footer>
+  </div>
+</body>
+</html>
