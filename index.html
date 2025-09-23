@@ -261,6 +261,28 @@
             gap: 10px;
         }
 
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+        }
+
+        .skill-tag {
+            padding: 10px 14px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-secondary);
+            font-size: 13px;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            border-color: rgba(127, 90, 240, 0.35);
+            color: var(--text-primary);
+            background: rgba(127, 90, 240, 0.12);
+        }
+
         .main {
             display: grid;
             gap: 32px;
@@ -600,24 +622,19 @@
             <div class="role">Network Operation Center | Network Engineer | IT Server And Network Infrastucture</div>
             <p>Detail-oriented engineer obsessed with network resilience, automation, and creating delightful connectivity experiences for users.</p>
 
-            <div class="badge-group">
-                <span class="badge"><i class="fa-solid fa-location-dot"></i> Bekasi, Indonesia</span>
-                <span class="badge"><i class="fa-solid fa-signal"></i> CCNA Certified</span>
-            </div>
-
             <div class="section-title">Contact</div>
             <div class="contact-list">
                 <div class="contact-item">
                     <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:aryapangestu8@gmail.com">aryapangestu8@gmail.com</a>
+                    <a href="mailto:aryapangestu.ap36@gmail.com">aryapangestu.ap36@gmail.com</a>
                 </div>
                 <div class="contact-item">
                     <i class="fa-solid fa-phone"></i>
-                    <a href="tel:+6285156032754">+62 851 5603 2754</a>
+                    <a href="tel:+6285692634674">+62 856 9263 4674</a>
                 </div>
                 <div class="contact-item">
                     <i class="fa-solid fa-globe"></i>
-                    <span>linkedin.com/in/aryapangestu</span>
+                    <span>www.linkedin.com/in/arya-pangestu-158845120</span>
                 </div>
             </div>
 
@@ -625,26 +642,50 @@
             <div class="skill-group">
                 <div>
                     <div class="skill-list">
-                        <span class="skill-chip"><i class="fa-solid fa-network-wired"></i> Network Architecture</span>
-                        <span class="skill-chip"><i class="fa-solid fa-shield-halved"></i> Network Security</span>
+                        <span class="skill-chip"><i class="fa-solid fa-network-wired"></i> Network Operation Center</span>
+                        <span class="skill-chip"><i class="fa-solid fa-shield-halved"></i> Network Engineer</span>
                         <span class="skill-chip"><i class="fa-solid fa-diagram-project"></i> Infrastructure Automation</span>
-                        <span class="skill-chip"><i class="fa-solid fa-bolt"></i> Incident Response</span>
+                        <span class="skill-chip"><i class="fa-solid fa-bolt"></i> IT Server And Network Infrastucture</span>
                     </div>
                 </div>
                 <div>
-                    <div class="skill-list">
-                        <span class="skill-chip"><i class="fa-brands fa-python"></i> Python &amp; Scripting</span>
-                        <span class="skill-chip"><i class="fa-solid fa-database"></i> MySQL &amp; SQLite</span>
-                        <span class="skill-chip"><i class="fa-solid fa-gauge-high"></i> Monitoring &amp; Observability</span>
-                        <span class="skill-chip"><i class="fa-solid fa-people-group"></i> Leadership &amp; Mentoring</span>
+                    <div class="skills-grid">
+                        <div class="skill-tag">SD-WAN Administrator</div>
+                        <div class="skill-tag">Peering BGP</div>
+                        <div class="skill-tag">Fiber to the x (FTTx)</div>
+                        <div class="skill-tag">Network Switches</div>
+                        <div class="skill-tag">Border Gateway Protocol (BGP)</div>
+                        <div class="skill-tag">Internet Protocol Suite (TCP/IP)</div>
+                        <div class="skill-tag">Structural Cabling Infrastructure</div>
+                        <div class="skill-tag">Process Development</div>
+                        <div class="skill-tag">Multidisciplinary Teamwork</div>
+                        <div class="skill-tag">Vendor-Specific Technologies</div>
+                        <div class="skill-tag">Network Operation</div>
+                        <div class="skill-tag">Network Administration</div>
+                        <div class="skill-tag">Python Scripting</div>
+                        <div class="skill-tag">Linux Administration</div>
+                        <div class="skill-tag">Network Security</div>
+                        <div class="skill-tag">Automation</div>
+                        <div class="skill-tag">Troubleshooting</div>
+                        <div class="skill-tag">VLAN Configuration</div>
+                        <div class="skill-tag">Routing Protocols</div>
                     </div>
                 </div>
             </div>
 
-            <div class="section-title">Languages</div>
+            <div class="section-title">Equipment Mastery</div>
             <div class="skill-list">
-                <span class="skill-chip"><i class="fa-solid fa-language"></i> Indonesian (Native)</span>
-                <span class="skill-chip"><i class="fa-solid fa-language"></i> English (Professional)</span>
+                <span class="skill-chip"><i class="fa-solid fa-microchip"></i> Cisco Switches & Routers</span>
+                <span class="skill-chip"><i class="fa-solid fa-microchip"></i> Aruba Switches & Acces Point</span>
+                <span class="skill-chip"><i class="fa-solid fa-microchip"></i> HP ProCurve Series</span>
+                <span class="skill-chip"><i class="fa-solid fa-microchip"></i> Mikrotik RouterOS</span>
+                <span class="skill-chip"><i class="fa-solid fa-microchip"></i> Ubiquiti UniFi</span>
+                <span class="skill-chip"><i class="fa-solid fa-microchip"></i> Fortinet FortiGate</span>
+                <span class="skill-chip"><i class="fa-solid fa-microchip"></i> Juniper Networks</span>
+                <span class="skill-chip"><i class="fa-solid fa-microchip"></i> Sophos Firewal</span>
+                <span class="skill-chip"><i class="fa-solid fa-microchip"></i> Linux Servers</span>
+            
+                
             </div>
         </aside>
 
